@@ -148,6 +148,7 @@
     if (output.audioItem) {
         AVAudioSession *session = [AVAudioSession sharedInstance];
         [session setCategory:AVAudioSessionCategoryPlayback error:nil];
+        [session overrideOutputAudioPort:AVAudioSessionPortOverrideSpeaker error:nil];
         [session setActive:YES error:nil];
         
         self.audioPlayer = [[AVPlayer alloc] initWithPlayerItem:output.audioItem];
